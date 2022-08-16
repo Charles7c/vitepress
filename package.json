@@ -1,6 +1,6 @@
 {
   "name": "vitepress",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Vite & Vue powered static site generator",
   "type": "module",
   "packageManager": "pnpm@7.8.0",
@@ -12,7 +12,15 @@
       "import": "./dist/node/index.js",
       "require": "./dist/node-cjs/index.cjs"
     },
-    "./dist/client/*": "./dist/client/*"
+    "./dist/client/*": "./dist/client/*",
+    "./client": {
+      "types": "./client.d.ts",
+      "default": "./dist/client/index.js"
+    },
+    "./theme": {
+      "types": "./theme.d.ts",
+      "default": "./dist/client/theme-default/index.js"
+    }
   },
   "bin": {
     "vitepress": "bin/vitepress.js"
